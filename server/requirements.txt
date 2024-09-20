@@ -1,0 +1,7 @@
+torch
+torchvision
+Pillow
+efficientnet-pytorch
+matplotlib
+grpcio
+grpcio-tools

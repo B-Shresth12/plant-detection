@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package plantdisease;
+
+service DiseaseClassifier {
+  rpc ClassifyDisease(ClassifyRequest) returns (ClassifyResponse);
+}
+
+message ClassifyRequest {
+  string crop = 1;
+  bytes image = 2;
+}
+
+message ClassifyResponse {
+  string disease = 1;
+}
