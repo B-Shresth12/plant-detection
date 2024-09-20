@@ -17,7 +17,7 @@ class ModelHandler:
             logging.info(f"Loading model from {model_path}")
             try:
                 self.model.load_state_dict(torch.load(
-                    model_path, map_location=self.device))
+                    model_path, map_location=self.device, weights_only=True))
                 self.model.eval()
                 self.model.to(self.device)
                 logging.info("Model loaded successfully.")

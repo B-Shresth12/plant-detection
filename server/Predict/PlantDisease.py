@@ -1,3 +1,4 @@
+import os
 import torch
 from torchvision import transforms
 from PIL import Image
@@ -5,10 +6,11 @@ import logging
 from typing import Tuple, Optional
 from Constant import VEGETABLES, THRESHOLD
 from Predict.models.ModelHandler import ModelHandler
+import settings
 
 # Initialize logging
 logging.basicConfig(
-    filename='logs/plant.log',
+    filename=os.path.join(settings.LOG_DIR, 'classifier.log'),
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='a'

@@ -3,5 +3,8 @@ torchvision
 Pillow
 efficientnet-pytorch
 matplotlib
+protobuf==5.28.1
 grpcio
 grpcio-tools
+
+python-dotenv

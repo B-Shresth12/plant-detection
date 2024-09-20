@@ -26,8 +26,7 @@ if _version_not_supported:
 
 
 class DiseaseClassifierStub(object):
-    """The gRPC service for plant disease classification
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -43,12 +42,10 @@ class DiseaseClassifierStub(object):
 
 
 class DiseaseClassifierServicer(object):
-    """The gRPC service for plant disease classification
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def ClassifyDisease(self, request, context):
-        """The classify method accepts an image and returns the disease result
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -70,8 +67,7 @@ def add_DiseaseClassifierServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DiseaseClassifier(object):
-    """The gRPC service for plant disease classification
-    """
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
     def ClassifyDisease(request,
