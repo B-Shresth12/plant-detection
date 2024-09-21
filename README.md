@@ -1,16 +1,16 @@
-# Plant Disease Classification System
+# 🌿 Plant Disease Classification System 🌿
 
 This project is a microservice-based application for plant disease classification using gRPC for communication between a FastAPI client and a PyTorch-based machine learning backend. It classifies plant diseases from images and organizes the data for future dataset creation.
 
-## Features
+## 🚀 Features
 
-- **gRPC-based microservices**: Efficient communication between the FastAPI client and ML inference service.
-- **Machine Learning**: Uses PyTorch models for vegetable type and plant disease detection.
-- **Modular Design**: Clean separation of concerns for scalability and flexibility.
-- **FastAPI for HTTP API**: Provides an interface for uploading images and receiving classification results.
-- **Logging and Data Handling**: Logs all requests and stores predicted data for future use.
+- **🛠 gRPC-based microservices**: Efficient communication between the FastAPI client and ML inference service.
+- **🧠 Machine Learning**: Uses PyTorch models for vegetable type and plant disease detection.
+- **📦 Modular Design**: Clean separation of concerns for scalability and flexibility.
+- **⚡ FastAPI for HTTP API**: Provides an interface for uploading images and receiving classification results.
+- **📝 Logging and Data Handling**: Logs all requests and stores predicted data for future use.
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```bash
 server/
@@ -32,9 +32,9 @@ fastapi_app/
   └── requirements.txt         # FastAPI dependencies
 ```
 
-## Installation
+## 🛠️ Installation
 
-### Windows
+### 🪟 Windows
 
 1. Clone the repository:
     ```bash
@@ -69,7 +69,7 @@ fastapi_app/
     uvicorn fastapi_app.main:app --reload
     ```
 
-### Linux / MacOS
+### 🐧 Linux / 🍎 macOS
 
 1. Clone the repository:
     ```bash
@@ -104,7 +104,7 @@ fastapi_app/
     uvicorn fastapi_app.main:app --reload
     ```
 
-## API Usage
+## 📡 API Usage
 
 1. **Start the servers**:
    - Run the gRPC server: 
@@ -133,23 +133,16 @@ fastapi_app/
    }
    ```
 
-## Environment Variables
+## ⚙️ Environment Variables
 
 The project uses environment variables to manage paths and ports. The variables include:
 - `BASE_DIR`: Base directory for data and logs.
 - `LOG_DIR`: Directory for storing log files.
 - `GRPC_PORT`: Port for gRPC server communication.
 
-## How it Works
+## 🧑‍💻 How it Works
 
 1. **FastAPI** accepts image upload and crop details from the user.
 2. The FastAPI server forwards the request to the gRPC service.
 3. **gRPC** service runs PyTorch models to predict the disease based on the image.
 4. Results are returned to the FastAPI client, and the response is sent back to the user.
-
-## License
-
-MIT License
-```
-
-This version uses proper GitHub markdown with backticks for code and commands, and it includes installation instructions for Windows, Linux, and macOS.
