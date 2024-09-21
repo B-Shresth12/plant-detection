@@ -1,7 +1,6 @@
 # importing system libraries
 import os
 import sys
-import logging
 # importing settings
 import settings
 # importing gRPC
@@ -18,17 +17,7 @@ os.environ.setdefault('MY_APP_SETTINGS_MODULE', 'settings')
 settings = __import__(os.getenv('MY_APP_SETTINGS_MODULE'))
 
 # Access the settings
-LOG_DIR = settings.LOG_DIR
 GRPC_PORT = settings.GRPC_PORT
-
-# setting up logger to log the status of the system
-logging.basicConfig(
-    filename=os.path.join(LOG_DIR, 'app.log'),
-    level=logging.DEBUG,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    filemode='a'
-)
-
 
 class DiseaseClassifierServicer(plantdisease_pb2_grpc.DiseaseClassifierServicer):
     def ClassifyDisease(self, request, context):
@@ -36,13 +25,10 @@ class DiseaseClassifierServicer(plantdisease_pb2_grpc.DiseaseClassifierServicer)
         image_data = request.image
 
         if not vegetable:
-            logging.error(
-                f"{StatusCode.INVALID_ARGUMENT}: Crop Field not provided")
             context.abort(StatusCode.INVALID_ARGUMENT,
                           "Crop field is required")
 
         if not image_data:
-            logging.error(f"{StatusCode.INVALID_ARGUMENT}: image Field not provided")
             context.abort(StatusCode.INVALID_ARGUMENT,
                           "Image field is required")
 
